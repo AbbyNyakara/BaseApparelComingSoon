@@ -1,0 +1,191 @@
+:root{
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo{
+  padding: 30px;
+}
+
+.logo img{
+  height: 2.5rem;
+}
+
+.container .left-section{
+  width: 100%;
+  height: auto;
+  padding: 3rem 4rem;
+  text-align: center;
+}
+
+.right-section{
+  width: 100%;      /*You have to give it dimension because the div is empty*/
+  height: 300px;
+  background-image:url('images/hero-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.left-section h1{
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: .6rem;
+  line-height: 1.2;
+  color: var(--Dark-Grayish-Red);
+  font-weight: 600;
+}
+.left-section h1 span{
+  color: var(--desaturated-red);
+  font-weight: 300;
+}
+
+.left-section p{
+  font-size: 1.3rem;
+  padding: 3rem 5rem;
+  color: var(--desaturated-red);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+form{
+  position: relative;
+  height: 42px;
+  max-width: 450px;
+}
+
+form input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem;
+  border: 1px solid var(--desaturated-red);
+  border-radius: 20px;
+}
+
+form input::placeholder{
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--desaturated-red);
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+form button{
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  height: 102%;
+  width: 60px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  max-width: 500px;
+}
+
+form button:hover{
+  background-image:  linear-gradient(135deg, hsl(0, 80%, 90%), hsl(0, 74%, 80%));
+}
+
+.attribution{
+  padding-bottom: 3rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 600px){
+  .logo{
+    position: absolute;
+    padding-left: 10%;
+  }
+  .logo img{
+    height: 3.2rem;
+  }
+  .container{
+    flex-direction: row;
+    background-image: url("images/bg-pattern-desktop.svg");
+
+  }
+  .container .left-section{
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 3rem;
+    margin-right: 15%;
+  }
+  .container .left-section h1{
+    font-size: 4rem;
+  }
+  .container .left-section p{
+    padding-left: 0;
+    line-height: 1.5;
+    font-size: 1.6rem
+  }
+  .container .right-section{
+    background-image: url("images/hero-desktop.jpg");
+    width: 80%;
+    height: 100vh;
+  }
+}
+
+/* Javascript functionality */
+
+.error-icon{
+  position: absolute;
+  top: 24%;
+  right: 70px;
+  visibility: hidden;
+}
+
+.error-message{
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  color: var(--soft-red);
+  font-size: 1.2rem;
+  visibility: hidden;
+}
+
+.left-section .form.error .error-icon{
+  visibility: visible;
+}
+
+.left-section .form.error .error-message{
+  visibility: visible;
+}
+
+.left-section .form.error input{
+  border: 1px solid var(--soft-red);
+}
